@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import imgPlayStation from "../../../public/PlayStation.png";
 const Advertisement = () => {
   return (
     <div>
@@ -8,17 +9,17 @@ const Advertisement = () => {
       <div className="addRow flex justify-between">
         <div className="left flex flex-col">
           <div className="top flex items-center">
-            <img
+            {/* <img
               className="w-[360px] h-auto"
               src="/PlayStation.png"
               alt="PlayStation"
+            /> */}
+            <Image
+              width={340}
+              height={320}
+              alt="playstation"
+              src={imgPlayStation}
             />
-            {/* <Image
-                width={340}
-                height={320}
-                alt="playstation"
-                src={"/PlayStation.png"}
-              /> */}
             <div className="flex flex-col w-[338px]">
               <h2 className="text-[49px] font-medium font-inter">
                 Playstation 5
