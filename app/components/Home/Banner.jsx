@@ -17,7 +17,7 @@ const Banner = () => {
           </p>
           <Link
             className="text-white inline-block border-white border rounded-md text-[16px] font-medium font-inter w[191px] py-4 px-[56px]"
-            href={"/shop"}
+            href={"/products"}
           >
             Shop Now
           </Link>
