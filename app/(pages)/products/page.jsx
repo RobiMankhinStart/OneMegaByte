@@ -1,7 +1,6 @@
-"use client";
 import Left from "@/app/components/Products/Left";
+import Right from "@/app/components/Products/Right";
 import React from "react";
-import Right from "./Right";
 
 const page = () => {
   return (

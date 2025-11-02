@@ -15,10 +15,10 @@ const Navbar = () => {
           </Link> */}
           <Link
             href={"/"}
-            class="relative overflow-hidden bg-gradient-to-r from-green-400 to-blue-500 text-white py-4 px-8 font-semibold rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:skew-x-12"
+            className="relative overflow-hidden bg-gradient-to-r from-green-400 to-blue-500 text-white py-4 px-8 font-semibold rounded-3xl shadow-xl transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:skew-x-12"
           >
-            <span class="absolute top-0 left-0 w-full h-full bg-gray-50"></span>
-            <span class="relative z-10 text-gray-600 text-2xl font-inter">
+            <span className="absolute top-0 left-0 w-full h-full bg-gray-50"></span>
+            <span className="relative z-10 text-gray-600 text-2xl font-inter">
               <span className="text-3xl text-gray-600">O</span>ne
               <span className="text-3xl text-gray-600">M</span>ega
               <span className="text-3xl text-gray-600">B</span>yte

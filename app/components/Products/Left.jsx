@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
