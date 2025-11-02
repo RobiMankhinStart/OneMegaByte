@@ -3,6 +3,7 @@ import Left from "@/app/components/Products/Left";
 import { IoIosArrowDown } from "react-icons/io";
 import React from "react";
 import ProCard from "@/app/components/Common/ProCard";
+import Pagination from "@/app/components/Common/Pagination";
 
 async function getProducts() {
   const res = await fetch("https://dummyjson.com/products", {
@@ -30,11 +31,12 @@ const Page = async () => {
                     {Products.products.length}
                   </span>
                 </h3>
-                {/* ..........here tghe pagination component */}
-                <div className="w-[256px] border border-[#D4D4D4] rounded-md flex justify-between py-3 px-4">
+                {/* ..........here the pagination component */}
+                <Pagination />
+                {/* <div className="w-[256px] border border-[#D4D4D4] rounded-md flex justify-between py-3 px-4">
                   <p className="text-sm">By rating</p>
                   <IoIosArrowDown className="text-[24px]" />
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-6 flex flex-wrap items-center gap-4">
