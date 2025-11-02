@@ -10,7 +10,7 @@ async function getProducts() {
   });
   return res.json();
 }
-export default async function page() {
+const Page = async () => {
   const Products = await getProducts();
   console.log(Products);
   return (
@@ -30,6 +30,7 @@ export default async function page() {
                     {Products.products.length}
                   </span>
                 </h3>
+                {/* ..........here tghe pagination component */}
                 <div className="w-[256px] border border-[#D4D4D4] rounded-md flex justify-between py-3 px-4">
                   <p className="text-sm">By rating</p>
                   <IoIosArrowDown className="text-[24px]" />
@@ -47,4 +48,5 @@ export default async function page() {
       </div>
     </div>
   );
-}
+};
+export default Page;

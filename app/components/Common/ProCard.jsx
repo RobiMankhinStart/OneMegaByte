@@ -3,6 +3,7 @@ import React from "react";
 import { CiHeart } from "react-icons/ci";
 
 const ProCard = ({ item }) => {
+  if (!item) return null;
   const { thumbnail, price, title, id } = item;
   return (
     <div className="w-[268px] bg-[#F6F6F6] rounded-[9px] px-4 py-6 flex flex-col gap-4 items-center justify-center">

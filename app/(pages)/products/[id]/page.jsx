@@ -7,9 +7,10 @@ async function getProduct(id) {
   return res.json();
 }
 
-export default async function ProductDetail({ params }) {
+const ProductDetail = async ({ params }) => {
   const { id } = params;
   const product = await getProduct(id);
+  console.log(product);
 
   return (
     <div className="font-inter p-10 flex flex-col md:flex-row gap-10">
@@ -32,4 +33,5 @@ export default async function ProductDetail({ params }) {
       </div>
     </div>
   );
-}
+};
+export default ProductDetail;
