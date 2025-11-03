@@ -5,14 +5,24 @@ import React from "react";
 import ProCard from "@/app/components/Common/ProCard";
 import Pagination from "@/app/components/Common/Pagination";
 
-async function getProducts() {
-  const res = await fetch("https://dummyjson.com/products", {
-    next: { revalidate: 10 },
-  });
+async function getProducts(limit = 10, skip = 0) {
+  const res = await fetch(
+    `https://dummyjson.com/products?limit=${limit}&skip=${skip}`,
+    {
+      next: { revalidate: 10 },
+    }
+  );
   return res.json();
 }
-const Page = async () => {
-  const Products = await getProducts();
+const Page = async ({ searchParams }) => {
+  const params = await searchParams;
+  const limit = Number(params.limit) || 10;
+  const page = Number(params.page) || 1;
+  const skip = (page - 1) * limit;
+
+  const Products = await getProducts(limit, skip);
+
+  // const Products = await getProducts();
   console.log(Products);
   return (
     <div className="">
@@ -32,7 +42,9 @@ const Page = async () => {
                   </span>
                 </h3>
                 {/* ..........here the pagination component */}
-                <Pagination />
+
+                <Pagination total={Products.total} limit={limit} page={page} />
+
                 {/* <div className="w-[256px] border border-[#D4D4D4] rounded-md flex justify-between py-3 px-4">
                   <p className="text-sm">By rating</p>
                   <IoIosArrowDown className="text-[24px]" />

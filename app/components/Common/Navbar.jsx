@@ -39,7 +39,7 @@ const Navbar = () => {
               <Link href={"/"}>Contact Us</Link>
             </li>
             <li className="text-[#989898] hover:text-black font-inter text-[20px] font-medium">
-              <Link href={"/"}>Blog</Link>
+              <Link href={"/register"}>Register</Link>
             </li>
           </ul>
           <div className="flex items-center gap-6">
@@ -49,9 +49,12 @@ const Navbar = () => {
             <div className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200">
               <IoCartOutline />
             </div>
-            <div className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200">
+            <Link
+              href={"/login"}
+              className="text-[32px] text-black cursor-pointer hover:text-[#989898] hover:scale-110 duration-200"
+            >
               <FiUser />
-            </div>
+            </Link>
           </div>
         </nav>
       </div>
