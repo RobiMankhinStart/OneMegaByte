@@ -1,12 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import bgImg from "../../../public/BannnerIphoneImg.png";
 
 const Banner = () => {
   return (
     <div className="bg-[#211c24]">
       <div className="container">
-        <div className=" py-[188px] pl-[160px] bg-contain bg-no-repeat bg-right bg-[url('../public/BannnerIphoneImg.png')]">
+        <div className=" py-[188px] pl-[160px] bg-contain bg-no-repeat bg-right bg-[url('/BannnerIphoneImg.png')]">
           <p className=" text-[#7a777c] text-[25px] font-inter font-semibold">
             Pro.Beyond.
           </p>

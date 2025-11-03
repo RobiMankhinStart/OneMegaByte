@@ -7,7 +7,7 @@ import { CiSearch } from "react-icons/ci";
 
 const Navbar = () => {
   return (
-    <div className="py-4">
+    <div className="py-4 shadow z-40 bg-[#ffff] fixed top-0 left-0 right-0">
       <div className="container">
         <nav className="flex font-semibold justify-between items-center">
           {/* <Link href={"/"} className="text-[25px] font-inter">
