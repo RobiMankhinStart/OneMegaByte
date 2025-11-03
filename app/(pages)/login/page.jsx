@@ -20,23 +20,26 @@ export default function page() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://freeapi.app/api/v1/users/login", {
+      const res = await fetch("https://api.freeapi.app/api/v1/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       const data = await res.json();
-
-      if (res.ok && data.data?.token) {
+      console.log(data);
+      if (data.success === true) {
         // ..............
         // ....... cookie
-        Cookies.set("token", data.data.token, { expires: 7 });
-        console.log("Token from API:", data.data.token);
+        // Authorization
+        Cookies.set("token", data.data.accessToken, { expires: 7 });
+        // document.cookie = `token=${data.data.accessToken}`;
+        // console.log("first");
+        // console.log("Token from API:", data.data.accessToken);
         console.log("Token from Cookies:", Cookies.get("token"));
 
         toast.success("Login successful!");
-        setTimeout(() => router.push("/dashboard"), 1500);
+        // setTimeout(() => router.push("/dashboard"), 1500);
       } else {
         toast.error(data.message || "Invalid credentials");
       }

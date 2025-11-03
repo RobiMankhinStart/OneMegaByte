@@ -24,16 +24,22 @@ export default function page() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://freeapi.app/api/v1/users/register", {
+      // const res = await fetch("https://freeapi.app/api/v1/users/register", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(formData),
+      // });
+      const res = await fetch("https://api.freeapi.app/api/v1/users/register", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       });
-
       const data = await res.json();
-
+      console.log(data);
       if (res.ok && data.data?.token) {
-        //....................Save token to cookies.
+        //....................Saving token to cookies.
         //   ................
         Cookies.set("token", data.data.token, { expires: 7 });
         console.log(" Token from API:", data.data.token);
