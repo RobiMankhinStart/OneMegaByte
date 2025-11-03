@@ -32,6 +32,9 @@ export default function page() {
         // ..............
         // ....... cookie
         Cookies.set("token", data.data.token, { expires: 7 });
+        console.log("Token from API:", data.data.token);
+        console.log("Token from Cookies:", Cookies.get("token"));
+
         toast.success("Login successful!");
         setTimeout(() => router.push("/dashboard"), 1500);
       } else {

@@ -35,7 +35,10 @@ export default function page() {
       if (res.ok && data.data?.token) {
         //....................Save token to cookies.
         //   ................
-        Cookies.set("token", data.data.token, { expires: 7 }); // 7 days
+        Cookies.set("token", data.data.token, { expires: 7 });
+        console.log(" Token from API:", data.data.token);
+        console.log("Token from Cookies:", Cookies.get("token"));
+
         toast.success("Registration successful!");
         setTimeout(() => router.push("/dashboard"), 1500);
       } else {
