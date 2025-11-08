@@ -1,0 +1,19 @@
+#    Git creating a branch
+Step	Command	                                  Purpose
+1	git checkout -b myBranch	          creating and Move to a branch
+2	git add .	                          .
+3	git commit -m "any related"               .
+4	git push -u origin branch-name	          .
+5	(optional) git branch -d one two	  .
+
+
+
+#   Git merge steps
+Step	Command	                                  Purpose
+1	git checkout main	                  Move to main branch
+2	(optional) git pull origin main	          Update local main
+3	git merge one	                          Merge first branch
+4	git push -u origin main	                  Push updates
+5	git merge two	                          Merge second branch
+6	git push origin main	                  Push updates again
+7	(optional) git branch -D one two	  Delete local branches
