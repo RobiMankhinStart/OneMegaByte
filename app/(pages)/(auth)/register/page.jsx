@@ -15,6 +15,17 @@ export default function page() {
     password: "",
   });
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  // Regex patterns
+  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.username.trim()) newErrors.username = "userName is required";
+    if(!emailRegex.test(formData))
+  };
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
