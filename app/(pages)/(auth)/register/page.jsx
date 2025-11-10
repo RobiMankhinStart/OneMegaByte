@@ -13,6 +13,7 @@ export default function page() {
     username: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
@@ -24,11 +25,22 @@ export default function page() {
   const validate = () => {
     const newErrors = {};
     if (!formData.username.trim()) newErrors.username = "userName is required";
-    if(!emailRegex.test(formData))
+    if (!emailRegex.test(formData.email))
+      newErrors.email = "inValid email format";
+    if (!passwordRegex.test(formData.password))
+      newErrors.password =
+        "Password must have uppercase, lowercase, number & special char";
+    if (formData.password !== formData.confirmPassword)
+      newErrors.confirmPassword = "Passwords do not match";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -78,8 +90,15 @@ export default function page() {
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/*.............. Username ..................*/}
+
+            <label htmlFor="username" className="block font-medium mb-1">
+              Username
+            </label>
+
             <input
-              type="username"
+              id="username"
+              type="text"
               name="username"
               placeholder="Username"
               required
@@ -88,7 +107,15 @@ export default function page() {
               onChange={handleChange}
               className="w-full p-3 border rounded-md focus:outline-blue-500"
             />
+            {errors.username && (
+              <p className="text-red-600 text-sm">{errors.username}</p>
+            )}
+            {/*.............. email ..................*/}
+            <label htmlFor="email" className="block font-medium mb-1">
+              email
+            </label>
             <input
+              id="email"
               type="email"
               name="email"
               placeholder="Email"
@@ -97,7 +124,15 @@ export default function page() {
               onChange={handleChange}
               className="w-full p-3 border rounded-md focus:outline-blue-500"
             />
+            {errors.email && (
+              <p className="text-red-600 text-sm">{errors.email}</p>
+            )}
+            {/*.............. password ..................*/}
+            <label htmlFor="password" className="block font-medium mb-1">
+              password
+            </label>
             <input
+              id="password"
               type="password"
               name="password"
               placeholder="Password"
@@ -106,6 +141,9 @@ export default function page() {
               onChange={handleChange}
               className="w-full p-3 border rounded-md focus:outline-blue-500"
             />
+            {errors.password && (
+              <p className="text-red-600 text-sm">{errors.password}</p>
+            )}
 
             <button
               type="submit"
