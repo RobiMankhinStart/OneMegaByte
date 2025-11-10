@@ -8,19 +8,14 @@ const Advertisement = () => {
       {/* <div className="container"> */}
       <div className="addRow flex justify-between">
         <div className="left flex flex-col">
-          <div className="top flex items-center">
-            {/* <img
-              className="w-[360px] h-auto"
-              src="/PlayStation.png"
-              alt="PlayStation"
-            /> */}
+          <div className="top flex items-center ">
             <Image
-              width={340}
-              height={320}
+              width={370}
+              height={350}
               alt="playstation"
               src={imgPlayStation}
             />
-            <div className="flex flex-col w-[338px]">
+            <div className="flex flex-col w-[338px] ">
               <h2 className="text-[49px] font-medium font-inter">
                 Playstation 5
               </h2>
@@ -30,14 +25,14 @@ const Advertisement = () => {
               </p>
             </div>
           </div>
-          <div className="bot flex justify-between w-[780px] ">
+          <div className="bot flex justify-between w-[800px] ">
             <div className="flex gap-12 items-center">
               <img
-                className="w-[104px]"
+                className="w-[130px]"
                 src="/hero__gnfk5g59t0qe_xlarge_2x 1.png"
                 alt="head phone"
               />
-              <div className="w-[160px]">
+              <div className="w-[150px]">
                 <h3 className="font-inter font-light text-[29px]">
                   Apple AirPods <span className="font-medium">Max</span>
                 </h3>
@@ -63,7 +58,7 @@ const Advertisement = () => {
             </div>
           </div>
         </div>
-        <div className="right flex justify-between items-center pl-[56px] bg-[#D2D2DA]">
+        <div className="right flex justify-between items-center pl-[56px] bg-[#EDEDED]">
           <div className="w-[360px]">
             <h3 className="text-[64px] font-inter font-thin">
               Macbook <span className="font-medium">Air</span>{" "}
